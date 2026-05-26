@@ -1,5 +1,1 @@
-export const metadata = { title: "Terms | FreeAura AI" };
-
-export default function TermsPage() {
-  return <main className="container page"><h1>Terms of Use</h1><p>The readings on this website are provided for entertainment and personal reflection only. They are not professional medical, legal, financial, or mental health advice.</p><p>Users should make their own decisions and seek qualified professional support where needed.</p><p>By using this website, users agree not to upload harmful, illegal, private, or inappropriate content.</p></main>;
-}
+export default function TermsPage(){return <main className="section"><div className="container"><div className="sectionTitle"><span className="kicker">Terms</span><h2>Terms of Use</h2><p>Readings are for spiritual guidance and entertainment. They are not medical, legal, financial, or professional advice.</p></div></div></main>}

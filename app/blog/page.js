@@ -1,20 +1,2 @@
-const articles = [
-  {
-    title: "How to Read Your Daily Horoscope Clearly",
-    text: "A daily horoscope works best when you use it as reflection, not pressure. Notice the theme, compare it with your current situation, and take one calm step forward."
-  },
-  {
-    title: "Palm Reading Basics for Beginners",
-    text: "Palmistry usually looks at the life line, heart line, head line, palm shape, and finger balance. This website uses an AI-style interpretation for entertainment and self-reflection."
-  },
-  {
-    title: "Love Compatibility and Zodiac Signs",
-    text: "Compatibility is not only about zodiac signs. Communication, timing, effort, and honesty matter. Zodiac readings can help users reflect on patterns in a connection."
-  }
-];
-
-export const metadata = { title: "Blog | FreeAura AI" };
-
-export default function BlogPage() {
-  return <main className="container page"><h1>Horoscope Blog</h1><p>Publish original articles here before applying for AdSense. This helps SEO and gives visitors more useful content.</p><div className="blog-list">{articles.map(article => <article className="article-card" key={article.title}><h3>{article.title}</h3><p>{article.text}</p></article>)}</div></main>;
-}
+const posts=['Daily Horoscope Meaning','How Palm Lines Are Read','Kundli Houses Explained','Love Compatibility by Zodiac','Tarot Card of the Day','Money and Career Astrology'];
+export default function BlogPage(){return <main className="section"><div className="container"><div className="sectionTitle"><span className="kicker">Blog</span><h2>Astrology Articles</h2><p>Use this section for SEO articles and daily content.</p></div><div className="grid grid3">{posts.map(p=><div className="feature" key={p}><div className="featureIcon">✦</div><h3>{p}</h3><p>A helpful article section can be added here with original content for visitors.</p></div>)}</div></div></main>}

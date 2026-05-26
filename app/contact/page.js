@@ -1,5 +1,1 @@
-export const metadata = { title: "Contact | FreeAura AI" };
-
-export default function ContactPage() {
-  return <main className="container page"><h1>Contact</h1><p>For support, partnership, or advertising questions, add your business email here.</p><p>Email: support@yourdomain.com</p></main>;
-}
+export default function ContactPage(){return <main className="section"><div className="container"><div className="sectionTitle"><span className="kicker">Contact</span><h2>Contact Us</h2><p>Add your business email here after launch.</p></div><div className="formCard"><label>Name</label><input placeholder="Your name"/><label>Email</label><input placeholder="Your email"/><label>Message</label><textarea placeholder="Write your message"/><button className="cta" style={{marginTop:18}}>Send Message</button></div></div></main>}
