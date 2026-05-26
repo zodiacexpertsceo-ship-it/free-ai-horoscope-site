@@ -1,5 +1,11 @@
-'use client';
-import { useState } from 'react';
-import { tarotCards } from '@/lib/astroData';
-function pick(n){const arr=[...tarotCards].sort(()=>Math.random()-.5);return arr.slice(0,n)}
-export default function TarotPage(){const [cards,setCards]=useState([]);const [question,setQuestion]=useState('');return <main className="section"><div className="container"><div className="sectionTitle"><span className="kicker">Tarot</span><h2>Card of the Day & Three Card Reading</h2><p>Visitors can ask a question and reveal three cards for past, present, and future style guidance.</p></div><div className="formShell"><div className="formCard"><label>Your Question</label><textarea value={question} onChange={e=>setQuestion(e.target.value)} placeholder="Ask your question..."/><button className="cta" style={{marginTop:18,width:'100%'}} onClick={()=>setCards(pick(3))}>Choose My Cards</button><button className="cta light" style={{marginTop:12,width:'100%'}} onClick={()=>setCards(pick(1))}>Card of the Day</button></div><div className="resultBox"><h3>Your Tarot Message</h3>{cards.length?<div className="grid grid3">{cards.map((c,i)=><div className="resultCard" key={c.name}><h3>{cards.length===3?['Past','Present','Future'][i]:'Today'}</h3><p><b>{c.name}</b><br />{c.meaning}</p></div>)}</div>:<div className="cardChoices"><div className="tarotCard"><div><b>?</b>Card 1</div></div><div className="tarotCard"><div><b>?</b>Card 2</div></div><div className="tarotCard"><div><b>?</b>Card 3</div></div></div>} {cards.length>0&&<p style={{marginTop:18}}>The answer points toward patience, honest reflection, and a clear next step. {question?'Your question needs calm timing more than pressure.':'Ask a question for a more focused message.'}</p>}</div></div></div></main>}
+import PageHero from "@/components/PageHero";
+import TarotTool from "@/components/TarotTool";
+
+export default function TarotPage() {
+  return (
+    <main>
+      <PageHero label="Tarot guidance" title="Ask a question" text="Write a question about love, work, timing, or personal direction and receive a calm tarot-style guidance message." />
+      <section className="section"><div className="container"><TarotTool /></div></section>
+    </main>
+  );
+}

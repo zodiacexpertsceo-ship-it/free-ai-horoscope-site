@@ -1,9 +1,12 @@
 # Design Notes
 
-This version is inspired by common astrology website features:
+This version changes the website into a more professional astrology portal style.
 
-- Sign grid, daily horoscope categories, tarot, games, and zodiac sections.
-- Palmistry onboarding flow with hand selection, birth details, upload, and reading result.
-- Kundli-style form with name, gender, birth date, birth time, birth place, and language.
-
-The design and wording are original and do not copy any website layout.
+Changes included:
+- Stronger premium homepage design
+- Better typography and spacing
+- Separate pages for each feature
+- No visible advert placeholder text
+- No visible unnecessary technology wording
+- Better forms and result sections
+- Mobile responsive layout

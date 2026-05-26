@@ -1,12 +1,7 @@
-# Zodiac Experts Website V2
+# Zodiacexperts Professional Website
 
-A clean free horoscope, palm reading, tarot, compatibility, games, and kundli-style website.
+A polished free astrology website with horoscope, palmistry, kundli-style report, compatibility, tarot-style guidance, games, blog, and contact pages.
 
-## Upload to GitHub
-Upload all files and folders in this extracted folder, not the ZIP file.
+Upload all files and folders in this extracted folder to GitHub. Do not upload the ZIP file.
 
-## Deploy on Vercel
-Import the GitHub repository and deploy as a Next.js project.
-
-## Important
-This version removes visible “AI” wording and Google AdSense/ad placeholder text from the front-end.
+Recommended deployment: Vercel.

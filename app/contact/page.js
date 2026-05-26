@@ -1,1 +1,20 @@
-export default function ContactPage(){return <main className="section"><div className="container"><div className="sectionTitle"><span className="kicker">Contact</span><h2>Contact Us</h2><p>Add your business email here after launch.</p></div><div className="formCard"><label>Name</label><input placeholder="Your name"/><label>Email</label><input placeholder="Your email"/><label>Message</label><textarea placeholder="Write your message"/><button className="cta" style={{marginTop:18}}>Send Message</button></div></div></main>}
+import PageHero from "@/components/PageHero";
+
+export default function ContactPage() {
+  return (
+    <main>
+      <PageHero label="Contact" title="Contact Zodiacexperts" text="Use this page for support, feedback, partnership requests, or general questions about the website." />
+      <section className="section">
+        <div className="container tool-layout">
+          <div className="tool-card form-grid">
+            <label>Name<input placeholder="Your name" /></label>
+            <label>Email<input placeholder="Your email" /></label>
+            <label>Message<textarea placeholder="Write your message" /></label>
+            <button className="primary-btn">Send Message</button>
+          </div>
+          <div className="result-box"><h3>Support</h3><p>Add your business email here before final launch. You can also add WhatsApp, social links, and support timing.</p></div>
+        </div>
+      </section>
+    </main>
+  );
+}

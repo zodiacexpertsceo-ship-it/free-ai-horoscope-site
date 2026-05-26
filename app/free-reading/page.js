@@ -1,10 +1,11 @@
-'use client';
-import { useState } from 'react';
-import { signs, signFromDate } from '@/lib/astroData';
+import PageHero from "@/components/PageHero";
+import FreeReadingTool from "@/components/FreeReadingTool";
 
-export default function FreeReadingPage(){
- const [form,setForm]=useState({name:'',dob:'',gender:'',type:'General',question:'',sign:'Aries'}); const [done,setDone]=useState(false);
- const update=e=>setForm({...form,[e.target.name]:e.target.value});
- const zodiac=form.dob?signFromDate(form.dob):form.sign; const name=form.name.trim()||'Dear visitor';
- return <main className="section"><div className="container"><div className="sectionTitle"><span className="kicker">Free reading</span><h2>Get Your Personal Reading</h2><p>Visitors enter basic details and receive a clear, spiritual-style reading result on the same page.</p></div><div className="formShell"><div className="formCard"><label>Name</label><input name="name" value={form.name} onChange={update} placeholder="Enter your name"/><label>Date of Birth</label><input type="date" name="dob" value={form.dob} onChange={update}/><label>Gender</label><select name="gender" value={form.gender} onChange={update}><option value="">Select</option><option>Female</option><option>Male</option><option>Other</option></select><label>Reading Type</label><select name="type" value={form.type} onChange={update}><option>General</option><option>Love</option><option>Career</option><option>Money</option><option>Life Path</option></select><label>Zodiac Sign</label><select name="sign" value={form.sign} onChange={update}>{signs.map(s=><option key={s.name}>{s.name}</option>)}</select><label>Your Question</label><textarea name="question" value={form.question} onChange={update} placeholder="Write your question here..."/><button className="cta" style={{marginTop:18,width:'100%'}} onClick={()=>setDone(true)}>Show My Free Reading</button></div><div className="resultBox"><h3>Your Reading Result</h3>{done?<><p>{name}, your {form.type.toLowerCase()} energy connects strongly with {zodiac}. This shows a phase where clarity, patience, and self-trust are important. You are moving through a period where answers can come gradually, especially when you stop forcing timing and allow the situation to reveal itself naturally.</p><p>{form.question?`Regarding your question, “${form.question}”, the message is to look at actions more than words. A steady path is forming, but it needs calm choices and honest communication.`:'Your path is asking for balance. Focus on what feels peaceful, consistent, and healthy for your future.'}</p></>:<p>Fill the form and click the button to see the reading here.</p>}</div></div></div></main>
+export default function FreeReadingPage() {
+  return (
+    <main>
+      <PageHero label="Personal guidance" title="Create your free reading" text="Enter your details, choose a topic, ask your question, and receive a clear spiritual-style reading on the same page." />
+      <section className="section"><div className="container"><FreeReadingTool /></div></section>
+    </main>
+  );
 }

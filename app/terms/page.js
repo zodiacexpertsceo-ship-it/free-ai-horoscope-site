@@ -1,1 +1,10 @@
-export default function TermsPage(){return <main className="section"><div className="container"><div className="sectionTitle"><span className="kicker">Terms</span><h2>Terms of Use</h2><p>Readings are for spiritual guidance and entertainment. They are not medical, legal, financial, or professional advice.</p></div></div></main>}
+import PageHero from "@/components/PageHero";
+
+export default function TermsPage() {
+  return (
+    <main>
+      <PageHero label="Terms" title="Terms of Use" text="Basic website terms for visitors using free readings, horoscope, palmistry, kundli-style reports, and tarot-style guidance." />
+      <section className="section"><div className="container content-card"><h3>Entertainment use</h3><p>All content and readings on Zodiacexperts are for personal guidance and entertainment. The website does not replace professional advice.</p><h3>Visitor responsibility</h3><p>Visitors are responsible for their own decisions. Before final launch, update this page with your full business information and legal terms.</p></div></section>
+    </main>
+  );
+}

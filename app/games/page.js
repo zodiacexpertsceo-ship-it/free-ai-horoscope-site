@@ -1,5 +1,16 @@
-'use client';
-import { useState } from 'react';
-const answers=['Yes, but slowly.','The timing needs patience.','A small sign will guide you.','Not today, but the energy can shift.','Trust actions more than words.','The answer is closer than it looks.'];
-const cookies=['A peaceful choice will protect your future.','Someone is thinking more than they show.','Your next step should be simple and clear.','Good luck grows through consistency.'];
-export default function GamesPage(){const [answer,setAnswer]=useState('');const [luck,setLuck]=useState(72);const [cookie,setCookie]=useState('');return <main className="section"><div className="container"><div className="sectionTitle"><span className="kicker">Games</span><h2>Spiritual Games</h2><p>Simple interactive tools that keep visitors engaged.</p></div><div className="grid grid3"><div className="feature"><div className="featureIcon">🎱</div><h3>Magic Answer Ball</h3><p>{answer||'Ask silently, then reveal the answer.'}</p><button className="cta" style={{marginTop:16}} onClick={()=>setAnswer(answers[Math.floor(Math.random()*answers.length)])}>Reveal</button></div><div className="feature"><div className="featureIcon">🍀</div><h3>Luck Meter</h3><p>Your luck score today is {luck}%.</p><div className="progress" style={{marginTop:16}}><span style={{width:`${luck}%`}} /></div><button className="cta" style={{marginTop:16}} onClick={()=>setLuck(45+Math.floor(Math.random()*50))}>Refresh</button></div><div className="feature"><div className="featureIcon">🥠</div><h3>Fortune Cookie</h3><p>{cookie||'Open a fortune message.'}</p><button className="cta" style={{marginTop:16}} onClick={()=>setCookie(cookies[Math.floor(Math.random()*cookies.length)])}>Open</button></div></div></div></main>}
+import PageHero from "@/components/PageHero";
+
+export default function GamesPage() {
+  return (
+    <main>
+      <PageHero label="Spiritual games" title="Free zodiac games" text="Simple engagement tools for visitors who want quick spiritual-style entertainment and daily return value." />
+      <section className="section">
+        <div className="container cards-grid">
+          <div className="content-card"><h3>Lucky Number</h3><p>Your lucky number today is 7. Focus on patience, reflection, and steady choices.</p></div>
+          <div className="content-card"><h3>Lucky Color</h3><p>Your lucky color today is royal purple. It supports intuition, confidence, and protection.</p></div>
+          <div className="content-card"><h3>Daily Message</h3><p>A small sign can guide a bigger decision. Stay observant and avoid rushing the outcome.</p></div>
+        </div>
+      </section>
+    </main>
+  );
+}

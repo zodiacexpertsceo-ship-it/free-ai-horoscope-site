@@ -1,8 +1,11 @@
-'use client';
-import { useState } from 'react';
-import { signs, houses, signFromDate } from '@/lib/astroData';
+import PageHero from "@/components/PageHero";
+import KundliTool from "@/components/KundliTool";
 
-export default function KundliPage(){
- const [form,setForm]=useState({name:'',gender:'Male',dob:'',time:'12:00',place:'',language:'English'}); const [done,setDone]=useState(false); const update=e=>setForm({...form,[e.target.name]:e.target.value}); const sign=signFromDate(form.dob); const idx=signs.findIndex(s=>s.name===sign); const moon=signs[(idx+3)%12]?.name||'Cancer'; const asc=signs[(idx+6)%12]?.name||'Libra';
- return <main className="section"><div className="container"><div className="sectionTitle"><span className="kicker">Kundli</span><h2>Free Kundli-Style Birth Report</h2><p>Form includes name, gender, birth date, birth time, place of birth, and language.</p></div><div className="formShell"><div className="formCard"><label>Name</label><input name="name" value={form.name} onChange={update}/><label>Gender</label><select name="gender" value={form.gender} onChange={update}><option>Male</option><option>Female</option><option>Other</option></select><label>Birth Date</label><input type="date" name="dob" value={form.dob} onChange={update}/><label>Birth Time</label><input type="time" name="time" value={form.time} onChange={update}/><label>Place of Birth</label><input name="place" value={form.place} onChange={update} placeholder="City, Country"/><label>Language</label><select name="language" value={form.language} onChange={update}><option>English</option><option>Hindi</option><option>Urdu</option><option>Roman Urdu</option></select><button className="cta" style={{marginTop:18,width:'100%'}} onClick={()=>setDone(true)}>Generate Kundli Report</button></div><div className="resultBox"><h3>Kundli Report</h3>{done?<><p>{form.name||'Visitor'}, based on your entered birth details, this sample report shows your Sun sign as {sign}, Moon focus as {moon}, and Ascendant-style energy as {asc}. Place of birth: {form.place||'not added'}.</p><div className="grid grid3" style={{marginTop:18}}><div className="resultCard"><h3>Sun Sign</h3><p>{sign}</p></div><div className="resultCard"><h3>Moon Focus</h3><p>{moon}</p></div><div className="resultCard"><h3>Ascendant</h3><p>{asc}</p></div></div><h3 style={{marginTop:24}}>12 Houses</h3><div className="grid grid2">{houses.slice(0,6).map((h,i)=><div className="resultCard" key={h}><h3>House {i+1}</h3><p>{h}</p></div>)}</div></>:<p>Enter birth details and click the button to view the kundli-style report.</p>}<p className="small" style={{marginTop:18}}>This is a spiritual entertainment report. A production astrology engine can be connected later for exact planetary calculations.</p></div></div></div></main>
+export default function KundliPage() {
+  return (
+    <main>
+      <PageHero label="Birth report" title="Kundli-style report" text="Enter name, gender, birth date, birth time, and birth place to create a structured birth-report style result." />
+      <section className="section"><div className="container"><KundliTool /></div></section>
+    </main>
+  );
 }

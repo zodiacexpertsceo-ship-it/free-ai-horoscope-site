@@ -1,2 +1,11 @@
-const posts=['Daily Horoscope Meaning','How Palm Lines Are Read','Kundli Houses Explained','Love Compatibility by Zodiac','Tarot Card of the Day','Money and Career Astrology'];
-export default function BlogPage(){return <main className="section"><div className="container"><div className="sectionTitle"><span className="kicker">Blog</span><h2>Astrology Articles</h2><p>Use this section for SEO articles and daily content.</p></div><div className="grid grid3">{posts.map(p=><div className="feature" key={p}><div className="featureIcon">✦</div><h3>{p}</h3><p>A helpful article section can be added here with original content for visitors.</p></div>)}</div></div></main>}
+import PageHero from "@/components/PageHero";
+import { blogPosts } from "@/lib/data";
+
+export default function BlogPage() {
+  return (
+    <main>
+      <PageHero label="Articles" title="Astrology blog" text="Helpful spiritual and astrology articles for horoscope, palmistry, love, and personal growth topics." />
+      <section className="section"><div className="container cards-grid">{blogPosts.map(post => <div className="article-card" key={post.title}><span className="badge">{post.tag}</span><h3>{post.title}</h3><p>{post.excerpt}</p></div>)}</div></section>
+    </main>
+  );
+}

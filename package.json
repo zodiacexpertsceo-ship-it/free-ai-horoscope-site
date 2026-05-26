@@ -1,15 +1,16 @@
 {
-  "name": "zodiac-experts-v2-site",
-  "version": "2.0.0",
+  "name": "zodiacexperts-professional-site",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "next": "16.2.6",
-    "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
   }
 }
